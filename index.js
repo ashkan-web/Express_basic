@@ -1,10 +1,25 @@
 const express = require('express');
+const logger = require('morgan');
 
 // invoking express will return a express "app" object
 const app = express();
 
 const PORT = 3000;
 const DOMAIN = 'localhost';
+
+// app.set accepts 2 arguments:
+// 1) a configuration key: this is a string of the configuration that you want to set
+// 2) the value you want the config to be
+app.set('view engine', 'ejs'); // telling express to use ejs as the view engine
+
+// We need to set the views directory
+
+// Initialize morgan 
+app.use(logger('dev'));
+
+
+
+
 
 // recieves at least 2 arguments:
 // 1) PATH of the resource

@@ -14,9 +14,10 @@ const DOMAIN = 'localhost';
 
 // Route to handle GET "/hello_world"
 app.get("/hello_world", (request, response) => {
-  response.send("Hello World!")
+  response.send("<h1>Hello World!</h1>");
 });
 
+// Make a route to handle GET "/survey"
 
 // app.listen is used to start your express server. It tells express to start listening for requests at a given url
 

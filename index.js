@@ -13,6 +13,7 @@ const DOMAIN = 'localhost';
 app.set('view engine', 'ejs'); // telling express to use ejs as the view engine
 
 // We need to set the views directory
+app.set('views', 'views'); // tell express to look for views inside of a directory called views
 
 // Initialize morgan 
 app.use(logger('dev'));
@@ -29,12 +30,16 @@ app.use(logger('dev'));
 
 // Route to handle GET "/hello_world"
 app.get("/hello_world", (request, response) => {
-  response.send("<h1>Hello World!</h1>");
+  // response.render() is used to render out a view, it accepts 3 arguments:
+  // 1) the path to the view starting from the configured directory, in this case it's "/views"
+  // 2) locals object
+  // 3) callback <-- usually you don't use this third argument
+  response.render('hello_world');
 });
 
 // Make a route to handle GET "/survey"
 app.get("/survey", (req, res) => {
-  res.send("<h5>Survey Page</h15>");
+  res.render("survey");
 });
 
 // app.listen is used to start your express server. It tells express to start listening for requests at a given url

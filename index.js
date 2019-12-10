@@ -42,6 +42,15 @@ app.get("/survey", (req, res) => {
   res.render("survey");
 });
 
+// Handler for GET "/submit"
+app.get("/submit", (req, res) => {
+  console.log(req.query);
+  res.render("submit", {
+    query: req.query,
+    subHeading: "thank you!"
+  });
+});
+
 // app.listen is used to start your express server. It tells express to start listening for requests at a given url
 
 // app.listen accepts 3 arguments

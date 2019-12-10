@@ -18,6 +18,9 @@ app.get("/hello_world", (request, response) => {
 });
 
 // Make a route to handle GET "/survey"
+app.get("/survey", (req, res) => {
+  res.send("<h1>Survey Page</h1>");
+});
 
 // app.listen is used to start your express server. It tells express to start listening for requests at a given url
 
